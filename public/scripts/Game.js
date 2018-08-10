@@ -8,7 +8,7 @@ class Game{
   }
 
   init(){
-    this.camera.setZoom(new Vector2d(1,1));
+    this.camera.setZoom(new Vector2d(0.4,0.4));
     this.camera.setPos(new Vector2d(0,0));
 
     for(let i=0;i<10;i++){

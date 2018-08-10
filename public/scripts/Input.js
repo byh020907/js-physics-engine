@@ -18,35 +18,33 @@ var currentMouses = [];
 var mousePos = new Vector2d(0, 0);
 var pMousePos = new Vector2d(0, 0);
 
-function onTouch(evt) {
-  evt.preventDefault();
-  if (evt.touches.length > 1 || (evt.type == "touchend" && evt.touches.length > 0))
-    return;
+function touchHandler(event)
+{
+    var touches = event.changedTouches,
+        first = touches[0],
+        type = "";
+    switch(event.type)
+    {
+        case "touchstart": type = "mousedown"; break;
+        case "touchmove":  type = "mousemove"; break;
+        case "touchend":   type = "mouseup";   break;
+        default:           return;
+    }
 
-  var newEvt = document.createEvent("MouseEvents");
-  var type = null;
-  var touch = null;
+    // initMouseEvent(type, canBubble, cancelable, view, clickCount,
+    //                screenX, screenY, clientX, clientY, ctrlKey,
+    //                altKey, shiftKey, metaKey, button, relatedTarget);
 
-  switch (evt.type) {
-    case "touchstart":
-      type = "mousedown";
-      touch = evt.changedTouches[0];
-      break;
-    case "touchmove":
-      type = "mousemove";
-      touch = evt.changedTouches[0];
-      break;
-    case "touchend":
-      type = "mouseup";
-      touch = evt.changedTouches[0];
-      break;
-  }
+    var simulatedEvent = document.createEvent("MouseEvent");
+    simulatedEvent.initMouseEvent(type, true, true, window, 1,
+                                  first.screenX, first.screenY,
+                                  first.clientX, first.clientY, false,
+                                  false, false, false, 0/*left*/, null);
 
-  newEvt.initMouseEvent(type, true, true, evt.originalTarget.ownerDocument.defaultView, 0,
-    touch.screenX, touch.screenY, touch.clientX, touch.clientY,
-    evt.ctrlKey, evt.altKey, evt.shiftKey, evt.metaKey, 0, null);
-  evt.originalTarget.dispatchEvent(newEvt);
+    first.target.dispatchEvent(simulatedEvent);
+    event.preventDefault();
 }
+
 
 function isKeyDown(keyCode) {
     return currentKeys[keyCode];

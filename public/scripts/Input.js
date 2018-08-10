@@ -6,9 +6,9 @@ window.addEventListener("mousedown", mouseDown, false);
 window.addEventListener("mouseup", mouseUp, false);
 window.addEventListener("mousemove", mouseMove, false);
 
-window.addEventListener("touchstart", touchHandler, false);
-window.addEventListener("touchmove", touchHandler, false);
-window.addEventListener("touchend", touchHandler, false);
+window.addEventListener("touchstart", touchHandler, true);
+window.addEventListener("touchmove", touchHandler, true);
+window.addEventListener("touchend", touchHandler, true);
 
 
 var keys = [];

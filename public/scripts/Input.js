@@ -42,7 +42,8 @@ function touchHandler(event)
                                   false, false, false, 0/*left*/, null);
 
     first.target.dispatchEvent(simulatedEvent);
-    event.preventDefault();
+    if(event.type=="touchmove")
+      event.preventDefault();
 }
 
 

@@ -1,5 +1,64 @@
 ﻿"use strict"
 
+Import("scripts/Graphic/Shape.js");
+Import("scripts/Graphic/Texture.js");
+Import("scripts/Graphic/Sprite.js");
+Import("scripts/Graphic/Text.js");
+
+Import("scripts/Algorithm/QuadTree.js");
+Import("scripts/Algorithm/Rectangle.js");
+
+Import("scripts/TextureLoader.js");
+Import("scripts/Input.js");
+Import("scripts/Camera.js");
+
+Import("scripts/GameObject/GameObject.js");
+
+Import("scripts/GameObject/Component/Component.js");
+
+Import("scripts/GameObject/Component/Body/Body.js");
+
+Import("scripts/GameObject/Component/Model/Model.js");
+Import("scripts/GameObject/Component/Model/ShapeModel.js");
+Import("scripts/GameObject/Component/Model/TextureModel.js");
+Import("scripts/GameObject/Component/Model/AnimationModel.js");
+Import("scripts/GameObject/Component/Model/PolygonModel.js");
+
+Import("scripts/GameObject/Component/Collision/Contact.js");
+Import("scripts/GameObject/Component/Collision/Collision.js");
+Import("scripts/GameObject/Component/Collision/UICollision.js");
+Import("scripts/GameObject/Component/Collision/AABB.js");
+Import("scripts/GameObject/Component/Collision/CircleCollision.js");
+Import("scripts/GameObject/Component/Collision/PolygonCollision.js");
+
+Import("scripts/GameObject/Physics/Joint.js");
+Import("scripts/GameObject/Physics/Spring.js");
+
+Import("scripts/GameObject/World.js");
+
+Import("scripts/GameObject/Entity/Entity.js");
+Import("scripts/GameObject/Entity/Circle.js");
+Import("scripts/GameObject/Entity/Polygon.js");
+Import("scripts/GameObject/Entity/Player.js");
+Import("scripts/GameObject/Entity/PigNose.js");
+Import("scripts/GameObject/Entity/Costume.js");
+Import("scripts/GameObject/Entity/DoubleBall.js");
+Import("scripts/GameObject/Entity/DoubleRect.js");
+Import("scripts/GameObject/Entity/GameText.js");
+Import("scripts/GameObject/Entity/Particle.js");
+
+Import("scripts/GameObject/Component/Body/UIBody.js");
+
+Import("scripts/UI/UIManager.js");
+Import("scripts/UI/UI.js");
+
+Import("scripts/Game.js");
+
+Import("scripts/GameState/GameStateManager.js");
+Import("scripts/GameState/TitleState.js");
+Import("scripts/GameState/MainGameState.js");
+
+
 var gsm;
 var uiManager;
 var networkManager;
